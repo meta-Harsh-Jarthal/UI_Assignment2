@@ -1,0 +1,146 @@
+<head>
+    <title>METACUBE PARKING</title>
+    <!--Included CSS file for styling -->
+    <link rel="stylesheet" href="styling.css">
+
+</head>
+
+<body>
+    <!-- Top navigation bar for excessing different sections-->
+    <nav id="topnav">
+        <a href="#employee-section" class="nav-item" title="ADD EMPLOYEE">EMPLOYEE</a>
+        <a href="#vehicle-section" class="nav-item" title="ADD VEHICLE">VEHICLE</a>
+        <a href="#feedback-section" class="nav-item" title="GIVE FEEDBACK">FEEDBACK</a>
+        <a href="#pricing-section" class="nav-item" title="BILL DETAILS">PRICING</a>
+    </nav>
+
+    <img src="Parking_1280x989px.jpg" alt="PARKING LOT IMAGE" width="1366px" id="parking-image">
+    <!--Employee Section-->
+    <button type="button" class="collapse" id="employee-section">Employee Details</button>
+    <section id="employee">
+        <!--Employee details form-->
+        <h2>Employee Details</h2>
+        <label>Full Name : <input type="text" class="input-text" name="employeename"
+                placeholder="Enter Full Name" /></label>
+        <br><br>
+        <input type="radio" name="gender" />Male<br>
+        <input type="radio" name="gender" />Female<br><br>
+        <label>Email Id : <input type="email" class="input-text" name="email" placeholder="Enter Email Id" /></label>
+        <br><br>
+        <label>Password : <input type="password" class="input-text" name="password"
+                placeholder="Enter Password" /></label>
+        <br><br>
+        <label>Confirm Password : <input type="password" class="input-text" name="confirmPassword"
+                placeholder="Confirm Password" /></label>
+        <br><br>
+        <label>Contact Number : <input type="tel" class="input-text" name="contact"
+                placeholder="Enter Phone Number" /></label>
+        <br><br>
+    </section>
+    <!--Vehicle Section-->
+    <button type="button" class="collapse" id="vehicle-section">Vehicle Details</button>
+    <section id="vehicles">
+        <!--Vehicle details form-->
+        <h2>Vehicle Details</h2>
+        <label>Vehicle Make : <input type="text" class="input-text" name="vehicleMake"
+                placeholder="Enter Vehicle Company" /></label>
+        <br><br>
+        <label>Vehicle Model : <input type="text" class="input-text" name="vehicleModel"
+                placeholder="Enter Vehicle Model" /></label>
+        <br><br>
+        <label>Type : <select name="type" id="Vehicle-type">
+                <option value="cycle">Cycle</option>
+                <option value="motorCycle">MotorCycle</option>
+                <option value="fourWheeler">Four Wheeler</option>
+            </select></label>
+        <br><br>
+        <label>Vehicle Number : <input type="text" class="input-text" name="vehicleNumber"
+                placeholder="Enter Vehicle Number" /></label>
+        <br><br>
+        <label>Employee Id : <input type="text" class="input-text" name="employeeId"
+                placeholder="Enter Employee Id" /></label>
+        <br><br>
+        <!--Vehicle identification form-->
+        <h3>Identification Details</h3>
+        <label>Color : <input type="text" class="input-text" name="vehicleColor"
+                placeholder="Enter Vehicle Color" /></label>
+        <br><br>
+        <label>Mark : <input type="text" class="input-text" name="vehicleMark"
+                placeholder="Enter Vehicle Mark" /></label>
+        <br><br>
+        <label>Visible Accessory : <input type="text" class="input-text" name="vehicleAccessory"
+                placeholder="Enter Vehicle Accessory" /></label>
+        <br><br>
+
+    </section>
+    <!--Feedback Section-->
+    <button type="button" class="collapse" id="feedback-section">Feedback</button>
+    <section id="feedback">
+        <img src="em.png" alt="EMAIL LOGO" class="feedback-image">
+        <div class="feedback-block">
+            <h2>Get In Touch</h2>
+            <input type="text" class="feedback-text" name="employeeName" placeholder="Full Name" />
+            <br><br>
+            <input type="email" class="feedback-text" name="email" placeholder="Email Id" />
+            <br><br>
+            <input type="text" class="feedback-text" name="subject" placeholder="Subject" />
+            <br><br>
+            <textarea name="message" class="message-text" cols="30" rows="10" placeholder="Message"></textarea>
+            <br><br>
+            <button type="button" class="send-button">Send Email &#x25B6</button>
+        </div>
+    </section>
+
+    <!--pricing Section-->
+    <button type="button" class="collapse" id="pricing-section">Pricing Details</button>
+    <section id="pricing">
+        <h2>Pricing Details</h2>
+        <br><br>
+        <!--Pricing details for CYCLE-->
+        <div class="price-details">
+            <h3 class="center">CYCLE</h3>
+            <div class="charges">
+                <div class="charges-boldtext">&#8377 100</div>
+                <div class="charges-text">&#47 Month</div>
+            </div>
+            <p class="split-charges">5 &#8377 Daily <br>100 &#8377 Monthly <br>500 &#8377 Yearly</p>
+            <button type="button" class="purchase-button">PURACHASE NOW</button>
+        </div>
+        <!--Pricing details for MOTORCYCLE-->
+        <div class="price-details">
+            <h3 class="center">MOTORCYCLE</h3>
+            <div class="charges">
+                <div class="charges-boldtext">&#8377 200</div>
+                <div class="charges-text">&#47 Month</div>
+            </div>
+            <p class="split-charges">10 &#8377 Daily <br> 200 &#8377 Monthly <br> 1000 &#8377 Yearly</p>
+            <button type="button" class="purchase-button">PURACHASE NOW</button>
+        </div>
+        <!--Pricing details for FOURWHEELER-->
+        <div class="price-details">
+            <h3 class="center">FOURWHEELER</h3>
+            <div class="charges">
+                <div class="charges-boldtext">&#8377 500</div>
+                <div class="charges-text">&#47 Month</div>
+            </div>
+            <p class="split-charges">20 &#8377 Daily <br> 500 &#8377 Monthly <br> 3500 &#8377 Yearly</p>
+            <button type="button" class="purchase-button">PURCHASE NOW</button>
+        </div>
+    </section>
+    <!-- JS Code for collapsable sections-->
+    <script>
+        var coll = document.getElementsByClassName("collapse");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
